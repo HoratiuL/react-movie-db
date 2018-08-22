@@ -1,0 +1,12 @@
+.movies-container {
+    padding: 15px;
+    color: fuchsia;
+}
+
+.movie-list {
+    padding: 10px 0;
+}
+
+.movie-item {
+    width: 30%;
+}
