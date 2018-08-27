@@ -1,6 +1,7 @@
 .movies-container {
     padding: 15px;
     color: fuchsia;
+    box-sizing: content-box;
 }
 
 .movie-list {
@@ -8,5 +9,8 @@
 }
 
 .movie-item {
-    width: 30%;
+    width: 25%;
+    text-align: center;
+    margin: 10px;
+    display: inline-block;
 }
