@@ -5,14 +5,15 @@ import Typography from "@material-ui/core/Typography";
 import "./MovieList.css";
 
 const MovieItem = props => {
+  const { title, year, description, deleteMovie } = props;
   return (
     <Card className="movie-item">
       <CardContent>
         <Typography variant="headline" component="h2">
-          {props.title}
+          {title}
         </Typography>
-        <Typography color="textSecondary">{props.year}</Typography>
-        <Typography component="p">{props.description}</Typography>
+        <Typography color="textSecondary">{year}</Typography>
+        <Typography component="p">{description}</Typography>
       </CardContent>
     </Card>
   );

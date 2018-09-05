@@ -2,15 +2,24 @@ import React from "react";
 import axios from "axios";
 import "./MovieList.css";
 
-class MovieInput extends React.Component {
+class MovieInputTest extends React.Component {
   state = {
     title: "",
     year: "",
-    description: ""
+    description: "",
+    id: ""
   };
 
-  handleChange = event => {
+  handleTitle = (event, title) => {
     this.setState({ title: event.target.value });
+  };
+
+  handleYear = (event, year) => {
+    this.setState({ year: event.target.value });
+  };
+
+  handleDescription = (event, description) => {
+    this.setState({ description: event.target.value });
   };
 
   handleSubmit = event => {
@@ -21,7 +30,7 @@ class MovieInput extends React.Component {
       title: this.state.title,
       year: this.state.year,
       description: this.state.description,
-      id: this.state.title
+      id: this.state.index
     };
 
     axios
@@ -38,16 +47,20 @@ class MovieInput extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Movie title:
-          <input type="text" name="title" onChange={this.handleChange} />
+          <input type="text" name="title" onChange={this.handleTitle} />
         </label>
         <label>
           Movie year:
-          <input type="text" name="year" onChange={this.handleChange} />
+          <input type="text" name="year" onChange={this.handleYear} />
         </label>
-        <button type="submit">ADD</button>
+        <label>
+          Description:
+          <input type="text" name="year" onChange={this.handleDescription} />
+        </label>
+        <button type="submit">ADD 1</button>
       </form>
     );
   }
 }
 
-export default MovieInput;
+export default MovieInputTest;

@@ -1,16 +1,18 @@
 .movies-container {
-    padding: 15px;
-    color: fuchsia;
-    box-sizing: content-box;
+  padding: 15px;
+  color: fuchsia;
+  box-sizing: content-box;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .movie-list {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .movie-item {
-    width: 25%;
-    text-align: center;
-    margin: 10px;
-    display: inline-block;
+  width: 30%;
+  text-align: center;
+  margin: 10px;
+  flex: 1 1 250px;
 }
