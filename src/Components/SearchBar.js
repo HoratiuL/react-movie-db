@@ -24,12 +24,13 @@ class SearchBar extends Component {
 
   addMovie = movie => {
     // console.log(movie);
+    this.setState({ results: [], searchTerm: "" });
+    //adaugat aici aceste setState: 1. face sa dispara casuta de result; 2. face sa dispara textul inscris in search
     this.props.addMovie(movie);
   };
 
   search = event => {
     event.preventDefault();
-    this.setState({ results: [] });
     searchMovie(this.state.searchTerm).then(response => {
       this.setState({
         results: [response.data]

@@ -20,8 +20,16 @@ class App extends Component {
     });
   }
 
-  deleteMovie = movie => {
-    console.log(movie);
+  deleteMovie = id => {
+    console.log(id);
+
+    deleteMovie(id).then(() => {
+      const { movies } = this.state;
+      const filtered = movies.filter(m => m.id !== id);
+      this.setState({
+        movies: filtered
+      });
+    });
   };
 
   addMovie = movie => {

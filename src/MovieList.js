@@ -1,5 +1,4 @@
 import React from "react";
-
 import MovieItem from "./MovieItem";
 import SearchBar from "./Components/SearchBar";
 import "./MovieList.css";
@@ -15,13 +14,15 @@ function MovieList(props) {
       </div>
       <div className="movies-container">
         {movies.length > 0
-          ? movies.map((movie, i) => (
+          ? movies.map(movie => (
               <MovieItem
-                key={i}
+                key={movie.id}
                 title={movie.title}
                 year={movie.year}
-                description={movie.description}
+                imageUrl={movie.poster}
+                plot={movie.plot}
                 deleteMovie={deleteMovie}
+                id={movie.id}
               />
             ))
           : "No movies found."}
