@@ -23,6 +23,7 @@ function MovieList(props) {
                 plot={movie.plot}
                 deleteMovie={deleteMovie}
                 id={movie.id}
+                rating={movie.rating}
               />
             ))
           : "No movies found."}

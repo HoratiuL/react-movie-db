@@ -7,19 +7,22 @@ import CardActions from "@material-ui/core/CardActions";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
+import RatingContainer from "./Components/RatingContainer";
+
+const Placeholder = () => {
+  return (
+    <div className="placeholder">
+      <span>No image found</span>
+    </div>
+  );
+};
 
 const MovieItem = props => {
-  const { title, year, plot, deleteMovie, id, imageUrl = "" } = props;
-  const Placeholder = () => {
-    return (
-      <div className="placeholder">
-        <span>No image found</span>
-      </div>
-    );
-  };
+  const { title, year, plot, deleteMovie, id, imageUrl = "", rating } = props;
+
   return (
     <Card className="movie-item">
-      <CardContent>
+      <CardContent className="item-content">
         {imageUrl.length > 0 ? (
           <CardMedia className="images" component="img" image={imageUrl} />
         ) : (
@@ -28,6 +31,7 @@ const MovieItem = props => {
         <Typography variant="headline" component="h2">
           {title}
         </Typography>
+        <RatingContainer rating={rating} />
         <Typography color="textSecondary">{year}</Typography>
         <Typography component="p">{plot}</Typography>
       </CardContent>

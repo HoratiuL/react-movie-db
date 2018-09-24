@@ -14,15 +14,16 @@
   width: 30%;
   margin: 10px;
   flex: 1 1 250px;
+  position: relative;
+  padding-bottom: 40px;
 }
 
 .images {
-  max-width: 250px;
-  /* object-fit: "cover"; */
+  max-width: auto;
   margin: auto;
 }
 
 .trash {
-  /* align-self: flex-end; */
-  margin: auto;
+  position: absolute;
+  bottom: 0;
 }
